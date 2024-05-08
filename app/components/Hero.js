@@ -4,6 +4,7 @@ const Hero = () => {
     return (
       <div
         className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden text-white"
+        id="home"
         style={{
           backgroundImage: `url('/images/mountains-image.jpeg')`,
           backgroundSize: "cover",
