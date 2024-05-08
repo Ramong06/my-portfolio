@@ -35,7 +35,7 @@ const ThreeScene = () => {
 
         const geometry = new THREE.BoxGeometry(1, 1, 1);
         const material = new THREE.MeshStandardMaterial({
-            color: 0xB87333,  // Copper color
+            color: 0x808080,  // Copper color
             metalness: 0.9,
             roughness: 0.2
         });
