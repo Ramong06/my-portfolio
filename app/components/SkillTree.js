@@ -33,7 +33,7 @@ const SkillTreeComponent = () => {
         controls.enableDamping = true; // Optional, but this gives a nice inertia feel
         controls.dampingFactor = 0.05;
         controls.screenSpacePanning = false; // So panning doesn't go into screen space
-        controls.minDistance = 100; // Limits for zoom
+        controls.minDistance = 120; // Limits for zoom
         controls.maxDistance = 200;
         controls.maxPolarAngle = Math.PI / 2; // Limit angle to prevent flipping
 
