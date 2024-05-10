@@ -9,8 +9,8 @@ const SkillTreeComponent = () => {
     useEffect(() => {
         const mount = mountRef.current;
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(35, mount.clientWidth / mount.clientHeight, 0.1, 1000);
-        camera.position.set(-80, 120, 140);
+        const camera = new THREE.PerspectiveCamera(29, mount.clientWidth / mount.clientHeight, 0.1, 1000);
+        camera.position.set(-80, 120, 160);
         camera.lookAt(new THREE.Vector3(0, 10, 0));
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -21,7 +21,7 @@ const SkillTreeComponent = () => {
         const ambientLight = new THREE.AmbientLight(0x404040, 1);
         scene.add(ambientLight);
         const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-        directionalLight.position.set(0, 1, 0);
+        directionalLight.position.set(0, 1, 6);
         scene.add(directionalLight);
 
         const pointLight = new THREE.PointLight(0xffffff, 1, 1000);
@@ -51,7 +51,7 @@ const SkillTreeComponent = () => {
             canvas.width = 256;  // Optimal width for visibility
             canvas.height = 64;  // Reduced height for compact labels
             const ctx = canvas.getContext('2d');
-            ctx.fillStyle = '#FFFFFF';  // Choose a background color that fits the design
+            ctx.fillStyle = 'transparent';  // Choose a background color that fits the design
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.font = '29px Arial';  // Adjust font size as necessary
             ctx.fillStyle = 'black';
@@ -66,11 +66,11 @@ const SkillTreeComponent = () => {
         }      
 
         skills.forEach((skill, index) => {
-            const height = skill.level * 5;
-            const geometry = new THREE.BoxGeometry(4, height, 4);
+            const height = skill.level * 4;
+            const geometry = new THREE.BoxGeometry(5, height, 4);
             const material = new THREE.MeshPhongMaterial({ color: skill.color });
             const mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(10 * index - (skills.length / 2) * 10, (height / 2) - 20, 0);
+            mesh.position.set(10 * index - (skills.length / 2) * 10, (height / 2) - 30, 0);
             scene.add(mesh);
         
             // Create and position the sprite label right underneath the bar
@@ -99,7 +99,7 @@ const SkillTreeComponent = () => {
         };
     }, []);
 
-    return <div ref={mountRef} style={{ width: '100%', height: '500px' }} />;
+    return <div ref={mountRef} style={{ width: '100%', height: '700px' }} />;
 };
 
 export default SkillTreeComponent;
