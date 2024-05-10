@@ -10,7 +10,7 @@ const SkillTreeComponent = () => {
         const mount = mountRef.current;
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(35, mount.clientWidth / mount.clientHeight, 0.1, 1000);
-        camera.position.set(10, 20, 150);
+        camera.position.set(-80, 120, 140);
         camera.lookAt(new THREE.Vector3(0, 10, 0));
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -24,8 +24,8 @@ const SkillTreeComponent = () => {
         directionalLight.position.set(0, 1, 0);
         scene.add(directionalLight);
 
-        const pointLight = new THREE.PointLight(0xffffff, 1, 500);
-        pointLight.position.set(0, 50, 50); // Adjust position as needed
+        const pointLight = new THREE.PointLight(0xffffff, 1, 1000);
+        pointLight.position.set(0, 100, 200); // Adjust position as needed
         scene.add(pointLight);
 
         // Setting up OrbitControls
@@ -36,29 +36,47 @@ const SkillTreeComponent = () => {
         controls.minDistance = 120; // Limits for zoom
         controls.maxDistance = 200;
         controls.maxPolarAngle = Math.PI / 2; // Limit angle to prevent flipping
-
+        
         const skills = [
             { name: 'JavaScript', level: 15, color: 0xfcc419 },
             { name: 'Python', level: 13, color: 0x306998 },
             { name: 'C#', level: 6, color: 0x239120 },
-            { name: 'Java', level: 6, color: 0x239120 },
-            { name: 'Git', level: 13, color: 0x239120 },
-            { name: 'Agile Methodologies', level: 13, color: 0x239120 },
+            { name: 'Java', level: 6, color: 0xF39C12 },
+            { name: 'Git', level: 13, color: 0xE74C3C },
             // Additional skills...
         ];
+        
+        function createSpriteLabel(text) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 256;  // Optimal width for visibility
+            canvas.height = 64;  // Reduced height for compact labels
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#FFFFFF';  // Choose a background color that fits the design
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = '29px Arial';  // Adjust font size as necessary
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+        
+            const texture = new THREE.CanvasTexture(canvas);
+            const material = new THREE.SpriteMaterial({ map: texture, transparent: true });
+            const sprite = new THREE.Sprite(material);
+            sprite.scale.set(20, 5, 1);  // Adjust size to ensure visibility under the bar
+            return sprite;
+        }      
 
         skills.forEach((skill, index) => {
             const height = skill.level * 5;
             const geometry = new THREE.BoxGeometry(4, height, 4);
-            const material = new THREE.MeshPhongMaterial({
-                color: skill.color,
-                emissive: skill.color,
-                emissiveIntensity: 0.2
-            });
+            const material = new THREE.MeshPhongMaterial({ color: skill.color });
             const mesh = new THREE.Mesh(geometry, material);
-            // Subtract from the y position to move it down
-            mesh.position.set(10 * index - (skills.length / 2) * 10, (height / 2) - 40, 0); 
+            mesh.position.set(10 * index - (skills.length / 2) * 10, (height / 2) - 20, 0);
             scene.add(mesh);
+        
+            // Create and position the sprite label right underneath the bar
+            const label = createSpriteLabel(skill.name);
+            label.position.set(mesh.position.x, mesh.position.y - (height / 2) - 5, 0);  // Adjust this position to put the label directly under the bar
+            scene.add(label);
         });
 
         window.addEventListener('resize', function () {
