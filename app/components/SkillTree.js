@@ -20,7 +20,7 @@ const SkillTreeComponent = () => {
 
         const ambientLight = new THREE.AmbientLight(0x404040, 1);
         scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 1, 6);
         scene.add(directionalLight);
 
@@ -87,9 +87,13 @@ const SkillTreeComponent = () => {
 
         const animate = () => {
             requestAnimationFrame(animate);
-            controls.update(); // Only required if controls.enableDamping or controls.autoRotate are set to true
+
+            // Rotate the scene slowly
+            scene.rotation.y += 0.005;
+
+            controls.update();
             renderer.render(scene, camera);
-        };      
+        };
 
         animate();
 
