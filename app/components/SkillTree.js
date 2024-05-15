@@ -9,12 +9,12 @@ const SkillTreeComponent = () => {
     useEffect(() => {
         const mount = mountRef.current;
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(29, mount.clientWidth / mount.clientHeight, 0.1, 1000);
-        camera.position.set(-80, 120, 160);
+        const camera = new THREE.PerspectiveCamera(23, mount.clientWidth / mount.clientHeight, 0.1, 1000);
+        camera.position.set(-160, 10, 500);
         camera.lookAt(new THREE.Vector3(0, 10, 0));
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setClearColor(0x000000, 0);
+        renderer.setClearColor(0x00000, 0);
         renderer.setSize(mount.clientWidth, mount.clientHeight);
         mount.appendChild(renderer.domElement);
 
@@ -54,7 +54,7 @@ const SkillTreeComponent = () => {
             ctx.fillStyle = 'transparent';  // Choose a background color that fits the design
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.font = '29px Arial';  // Adjust font size as necessary
-            ctx.fillStyle = 'black';
+            ctx.fillStyle = 'white';
             ctx.textAlign = 'center';
             ctx.fillText(text, canvas.width / 2, canvas.height / 2);
         
@@ -70,7 +70,7 @@ const SkillTreeComponent = () => {
             const geometry = new THREE.BoxGeometry(5, height, 4);
             const material = new THREE.MeshPhongMaterial({ color: skill.color });
             const mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(10 * index - (skills.length / 2) * 10, (height / 2) - 30, 0);
+            mesh.position.set(10 * index - (skills.length / 2) * 7.5, (height / 2) - 27, 0);
             scene.add(mesh);
         
             // Create and position the sprite label right underneath the bar
@@ -89,7 +89,7 @@ const SkillTreeComponent = () => {
             requestAnimationFrame(animate);
             controls.update(); // Only required if controls.enableDamping or controls.autoRotate are set to true
             renderer.render(scene, camera);
-        };
+        };      
 
         animate();
 

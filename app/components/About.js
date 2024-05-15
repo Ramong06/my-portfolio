@@ -4,7 +4,7 @@ const About = () => {
     return (
       <div
         id="about"
-        className="container mx-auto px-4 py-12 flex flex-col md:flex-row"
+        className="w-full min-h-screen flex flex-col md:flex-row bg-neutral-950"  // Tailwind class for black background
       >
         <div className="flex flex-col md:flex-row flex-1 items-center justify-center p-6">
           <div className="w-full md:w-1/2">
@@ -15,10 +15,10 @@ const About = () => {
                 className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center">
               About Me
             </h2>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center">
+            <p className="text-base md:text-lg text-gray-200 leading-relaxed text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
