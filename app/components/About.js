@@ -4,7 +4,7 @@ const About = () => {
     return (
       <div
         id="about"
-        className="w-full min-h-screen flex flex-col md:flex-row bg-neutral-950"  // Tailwind class for black background
+        className="w-full min-h-screen flex flex-col md:flex-row bg-neutral-950"
       >
         <div className="flex flex-col md:flex-row flex-1 items-center justify-center p-6">
           <div className="w-full md:w-1/2">
