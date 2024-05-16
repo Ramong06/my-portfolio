@@ -71,6 +71,7 @@ const Navbar = () => {
               Contact
             </a>
           </div>
+          {/* Mobile Navbar */}
           <button
             className="md:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}

@@ -12,7 +12,7 @@ const About = () => {
               <img
                 src="./images/IMG_1196.jpg"
                 alt="Ramon Garza"
-                className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto"
+                className="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover mx-auto"
               />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center">
