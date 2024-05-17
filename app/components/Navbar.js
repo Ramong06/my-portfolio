@@ -79,11 +79,33 @@ const Navbar = () => {
             {isOpen ? "Close" : "Menu"}
           </button>
           {isOpen && (
-            <div className="absolute top-full right-0 bg-yellow w-full flex flex-col items-center py-2">
-              <a href="#home" className="text-white py-2 hover:underline">
+            <div
+              className={`absolute top-full right-0 bg-yellow w-full flex flex-col items-center py-2 ${
+                isScrolled ? "bg-black" : "bg-transparent py-2"
+              }`}
+            >
+              <a
+                href="#home"
+                className="text-white py-2 hover:underline"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("home")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
                 Home
               </a>
-              <a href="#about" className="text-white py-2 hover:underline">
+              <a
+                href="#about"
+                className="text-white hover:underline"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("about")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
                 About
               </a>
               <a href="#projects" className="text-white py-2 hover:underline">
