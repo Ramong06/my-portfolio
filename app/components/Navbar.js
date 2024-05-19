@@ -64,7 +64,16 @@ const Navbar = () => {
             >
               About
             </a>
-            <a href="#projects" className="text-white hover:underline">
+            <a
+              href="#techSkills"
+              className="text-white hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("techSkills")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Projects
             </a>
             <a href="#contact" className="text-white hover:underline">
