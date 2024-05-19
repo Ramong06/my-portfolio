@@ -1,13 +1,9 @@
-import SkillTreeComponent from "./SkillTree";
-import ParticleEffect from "./ParticleEffect";
-
 const About = () => {
     return (
         <div
             id="about"
-            className="relative pt-16 md:pt-24 w-full min-h-screen items-center justify-center flex flex-col md:flex-row"
+            className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-black"
         >
-            <ParticleEffect />
             <div className="container flex flex-col md:flex-row flex-1 items-center justify-center p-6">
                 <div className="w-full">
                     <div className="mb-6">

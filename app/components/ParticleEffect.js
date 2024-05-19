@@ -13,7 +13,7 @@ const ParticleEffect = () => {
 
         camera.position.z = 5;
         renderer.setSize(mount.clientWidth, mount.clientHeight);
-        renderer.setClearColor(0x1a1a1a, 1); // Set the background to a dark color
+        renderer.setClearColor(0x000000, 1); // Set the background to a dark color
         mount.appendChild(renderer.domElement);
 
         // Particle system
