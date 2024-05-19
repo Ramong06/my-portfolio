@@ -4,6 +4,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import TechnicalSKills from './components/TechnicalSkills';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Navbar />
             <Hero />
             <About />
+            <TechnicalSKills />
         </div>
     );
 };
