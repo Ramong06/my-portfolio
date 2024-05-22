@@ -3,9 +3,9 @@ import Cube from "./Cube";
 
 const Hero = () => {
   return (
-    <div className="relative h-screen flex flex-col items-center text-center px-4 overflow-hidden text-white" id="home">
-      <div className="absolute inset-0 bg-violet-950 bg-opacity-50"></div>
-      <div className="relative z-10 pt-[90px]"> {/* Adjust the padding top as needed */}
+    <div className="relative h-screen flex flex-col items-center text-center px-4 overflow-hidden bg-darkPurple text-white" id="home">
+      <div className="absolute inset-0 bg-darkPurple bg-opacity-50"></div>
+      <div className="relative z-10 pt-[120px]"> {/* Adjust the padding top as needed */}
         <h1 className="text-2xl md:text-4xl font-bold font-poppins text-lime-500">
           Ramon Garza
         </h1>

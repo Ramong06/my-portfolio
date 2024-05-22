@@ -33,8 +33,7 @@ const About = () => {
               hobbies as I do to my professional endeavors.
             </p>
           </div>
-        </div>
-        <a
+          <a
           href="#techSkills"
           onClick={(e) => {
             e.preventDefault();
@@ -42,10 +41,11 @@ const About = () => {
               .getElementById("techSkills")
               .scrollIntoView({ behavior: "smooth" });
           }}
-          className="absolute bottom-5 text-sm md:text-2xl underline decoration-2 hover:no-underline text-white cursor-pointer"
-        >
-          Projects and Technical Skills ↓
-        </a>
+          className="absolute bottom-5 text-sm md:text-2xl underline decoration-2 hover:no-underline cursor-pointer text-white"
+          >
+            Technical Skills ↓
+          </a>
+        </div>
       </div>
     );
 };
