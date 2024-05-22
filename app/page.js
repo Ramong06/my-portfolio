@@ -12,7 +12,7 @@ const Home = () => {
         <div>
             <Navbar />
             <Hero />
-            <ScrollingLanguages />
+            {/* <ScrollingLanguages /> */}
             <About />
             <TechnicalSKills />
         </div>

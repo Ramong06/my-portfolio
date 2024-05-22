@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Cube from "./Cube";
+import ScrollingLanguages from "./ScrollingLanguages";
 
 export default function Hero() {
   return (
@@ -16,6 +16,9 @@ export default function Hero() {
       <div className="relative z-10 mt-6 w-full" style={{ height: '600px' }}>
         <Cube />
       </div>
+      <div className="relative z-10 w-full mt-4">
+        <ScrollingLanguages />
+      </div>
       <a
         href="#about"
         onClick={(e) => {
@@ -24,11 +27,10 @@ export default function Hero() {
             .getElementById("about")
             .scrollIntoView({ behavior: "smooth" });
         }}
-        className="absolute bottom-5 text-sm md:text-2xl underline decoration-2 hover:no-underline cursor-pointer"
+        className="relative z-10 text-sm md:text-2xl underline decoration-2 hover:no-underline cursor-pointer mt-4"
       >
         Learn more about me ↓
       </a>
     </div>
   );
 };
-
