@@ -3,14 +3,14 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const Cube = () => {
+export default function Cube() {
     const mountRef = useRef(null);
 
     useEffect(() => {
         const mount = mountRef.current;
 
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(50, mount.clientWidth / mount.clientHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(30, mount.clientWidth / mount.clientHeight, 0.1, 1000);
         camera.position.z = 5;
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -56,5 +56,3 @@ const Cube = () => {
 
     return <div ref={mountRef} style={{ width: '100%', height: '100%' }} />;
 };
-
-export default Cube;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Cube from "./Cube";
 
-const Hero = () => {
+export default function Hero() {
   return (
     <div className="relative h-screen flex flex-col items-center text-center px-4 overflow-hidden bg-darkPurple text-white" id="home">
       <div className="absolute inset-0 bg-darkPurple bg-opacity-50"></div>
@@ -32,4 +32,3 @@ const Hero = () => {
   );
 };
 
-export default Hero;
