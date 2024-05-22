@@ -27,7 +27,7 @@ export default function Hero() {
             .getElementById("about")
             .scrollIntoView({ behavior: "smooth" });
         }}
-        className="relative z-10 text-sm md:text-2xl underline decoration-2 hover:no-underline cursor-pointer mt-4"
+        className="relative z-10 text-lg md:text-2xl underline decoration-2 hover:no-underline cursor-pointer mt-4"
       >
         Learn more about me ↓
       </a>

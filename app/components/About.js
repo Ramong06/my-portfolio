@@ -2,9 +2,9 @@ export default function About() {
     return (
       <div
         id="about"
-        className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-black"
+        className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-darkPurple"
       >
-        <div className="container flex flex-col md:flex-row flex-1 items-center justify-center p-6">
+        <div className="container flex flex-col md:flex-row flex-1 w-full items-center justify-center p-6 bg-purple-700">
           <div className="w-full">
             <div className="mb-6">
               <img
