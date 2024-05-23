@@ -41,7 +41,7 @@ export default function Hero() {
       <div className="relative z-10 w-full mt-4">
         <ScrollingLanguages />
       </div>
-      {isVisible && (
+      {/* {isVisible && (
         <a
           href="#about"
           onClick={(e) => {
@@ -54,7 +54,7 @@ export default function Hero() {
         >
           Learn more about me ↓
         </a>
-      )}
+      )} */}
     </div>
   );
 }

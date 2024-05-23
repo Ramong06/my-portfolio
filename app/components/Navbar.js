@@ -16,7 +16,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-10 py-6 transition-colors duration-300 ${isScrolled ? 'bg-lightDarkPurple shadow-lg' : 'bg-darkPurple'} z-50`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-10 py-6 transition-colors duration-300 ${
+        isScrolled ? "bg-lightDarkPurple shadow-lg" : "bg-darkPurple"
+      } z-50`}
+    >
       <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
         <div className="text-sm md:text-2xl font-bold text-white">
           <a
@@ -70,7 +74,7 @@ const Navbar = () => {
                 .scrollIntoView({ behavior: "smooth" });
             }}
           >
-            Projects
+            Technical Skills
           </a>
           <a href="#contact" className="text-white hover:underline">
             Contact
@@ -99,7 +103,7 @@ const Navbar = () => {
             </a>
             <a
               href="#about"
-              className="text-white hover:underline"
+              className="text-white py-2 hover:underline"
               onClick={(e) => {
                 e.preventDefault();
                 document
@@ -109,10 +113,28 @@ const Navbar = () => {
             >
               About
             </a>
-            <a href="#projects" className="text-white py-2 hover:underline">
-              Projects
+            <a
+              href="#techSkills"
+              className="text-white py-2 hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("techSkills")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Technical Skills
             </a>
-            <a href="#contact" className="text-white py-2 hover:underline">
+            <a
+              href="#home"
+              className="text-white py-2 hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("home")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Contact
             </a>
           </div>

@@ -43,6 +43,13 @@
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for tab effect */
   }
 
+  @media (max-width: 768px) {
+    .large-rounded-corner {
+        border-top-left-radius: 80px; /* Adjust this value to make the corner larger */
+
+      }
+  }
+
   .fade-in {
     opacity: 0;
     transform: translateY(20px);
