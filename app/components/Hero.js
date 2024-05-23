@@ -1,7 +1,29 @@
+import { useState, useEffect } from "react";
 import Cube from "./Cube";
 import ScrollingLanguages from "./ScrollingLanguages";
 
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = document.getElementById("home").offsetHeight;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > heroHeight) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="relative h-screen flex flex-col items-center text-center px-4 overflow-hidden bg-darkPurple text-white" id="home">
       <div className="absolute inset-0 bg-darkPurple bg-opacity-50"></div>
@@ -19,18 +41,20 @@ export default function Hero() {
       <div className="relative z-10 w-full mt-4">
         <ScrollingLanguages />
       </div>
-      <a
-        href="#about"
-        onClick={(e) => {
-          e.preventDefault();
-          document
-            .getElementById("about")
-            .scrollIntoView({ behavior: "smooth" });
-        }}
-        className="relative z-10 text-lg md:text-2xl underline decoration-2 hover:no-underline cursor-pointer mt-4 pb-5"
-      >
-        Learn more about me ↓
-      </a>
+      {isVisible && (
+        <a
+          href="#about"
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .getElementById("about")
+              .scrollIntoView({ behavior: "smooth" });
+          }}
+          className="relative z-10 text-lg md:text-2xl underline decoration-2 hover:no-underline cursor-pointer mt-4 pb-5"
+        >
+          Learn more about me ↓
+        </a>
+      )}
     </div>
   );
-};
+}
