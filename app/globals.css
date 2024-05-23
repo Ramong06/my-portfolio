@@ -37,3 +37,8 @@
       animation: scroll-mobile 10s linear infinite;
     }
   }
+
+  .large-rounded-corner {
+    border-top-left-radius: 120px; /* Adjust this value to make the corner larger */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for tab effect */
+  }
