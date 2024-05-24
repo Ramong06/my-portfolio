@@ -17,46 +17,81 @@
     animation: scroll 20s linear infinite;
   }
   
-  @media (max-width: 1024px) { /* Tablet screens */
-    .animate-scroll {
-      animation: scroll 15s linear infinite;
-    }
+@media (max-width: 1024px) { /* Tablet screens */
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
   }
-  
-  @media (max-width: 768px) { /* Cell phone screens */
-    @keyframes scroll-mobile {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-380%);
-      }
+}
+
+@media (max-width: 768px) { /* Cell phone screens */
+  @keyframes scroll-mobile {
+    0% {
+      transform: translateX(100%);
     }
-  
-    .animate-scroll {
-      animation: scroll-mobile 10s linear infinite;
+    100% {
+      transform: translateX(-380%);
     }
   }
 
+  .animate-scroll {
+    animation: scroll-mobile 10s linear infinite;
+  }
+}
+
+.large-rounded-corner {
+  border-top-left-radius: 120px; /* Adjust this value to make the corner larger */
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for tab effect */
+}
+
+@media (max-width: 768px) {
   .large-rounded-corner {
-    border-top-left-radius: 120px; /* Adjust this value to make the corner larger */
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for tab effect */
-  }
+      border-top-left-radius: 80px; /* Adjust this value to make the corner larger */
 
-  @media (max-width: 768px) {
-    .large-rounded-corner {
-        border-top-left-radius: 80px; /* Adjust this value to make the corner larger */
+    }
+}
 
-      }
-  }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 4s ease-out, transform 4s ease-out;
+}
 
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 4s ease-out, transform 4s ease-out;
-  }
-  
-  .fade-in-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}

@@ -76,9 +76,6 @@ const Navbar = () => {
           >
             Technical Skills
           </a>
-          <a href="#contact" className="text-white hover:underline">
-            Contact
-          </a>
         </div>
         {/* Mobile Navbar */}
         <button
@@ -124,18 +121,6 @@ const Navbar = () => {
               }}
             >
               Technical Skills
-            </a>
-            <a
-              href="#home"
-              className="text-white py-2 hover:underline"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("home")
-                  .scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Contact
             </a>
           </div>
         )}

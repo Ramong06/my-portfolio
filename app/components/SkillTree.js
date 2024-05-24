@@ -10,7 +10,7 @@ const SkillTreeComponent = () => {
         const mount = mountRef.current;
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(30, mount.clientWidth / mount.clientHeight, 0.1, 1000);
-        camera.position.set(-160, 10, 500);
+        camera.position.set(-160, 10, 450); // Zoom in slightly more
         camera.lookAt(new THREE.Vector3(0, 10, 0));
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -32,6 +32,7 @@ const SkillTreeComponent = () => {
         controls.enableDamping = true;
         controls.dampingFactor = 0.05;
         controls.screenSpacePanning = false;
+        controls.enableZoom = false; // Disable zoom
         controls.minDistance = 120;
         controls.maxDistance = 200;
         controls.maxPolarAngle = Math.PI / 2;
