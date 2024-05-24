@@ -5,7 +5,7 @@ const TechnicalSkills = () => {
   return (
     <div
       id="techSkills"
-      className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-black"
+      className="relative md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-darkPurple"
     >
       <div className="container flex flex-col md:flex-row flex-1 items-center justify-between p-6 gap-6">
         <div className="w-full md:w-1/2 lg:w-2/5">
