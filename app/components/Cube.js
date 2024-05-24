@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default function Cube() {
     const mountRef = useRef(null);
@@ -31,18 +30,10 @@ export default function Cube() {
         directionalLight.position.set(1, 1, 1).normalize();
         scene.add(directionalLight);
 
-        // Add OrbitControls
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
-        controls.rotateSpeed = 1;
-        controls.enableZoom = false; // Disable zoom
-
         const animate = () => {
             requestAnimationFrame(animate);
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
-            controls.update();
             renderer.render(scene, camera);
         };
 
