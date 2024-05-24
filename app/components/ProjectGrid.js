@@ -33,7 +33,9 @@ export default function ProjectGrid() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
       {projects.map((project, index) => (
         <div key={index} className="relative group">
-          <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-lg" />
+          <div className="relative w-full h-65 rounded-lg overflow-hidden">
+            <img src={project.image} alt={project.title} className="w-full h-full object-fit" />
+          </div>
           <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white p-4 transition-opacity duration-300">
             <h3 className="text-xl font-bold">{project.title}</h3>
             <p className="mb-4">{project.description}</p>
