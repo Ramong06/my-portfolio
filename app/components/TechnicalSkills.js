@@ -1,30 +1,34 @@
 import SkillTreeComponent from "./SkillTree";
+import ProjectGrid from "./ProjectGrid"; // Ensure this is the correct path to your ProjectGrid component
 
-const TechnicalSKills = () => {
-    return (
-      <div
-        id="techSkills"
-        className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-black"
-      >
-        <div className="container flex flex-col md:flex-row flex-1 items-center justify-center p-6">
-          <div className="w-full">
-            <SkillTreeComponent />
-          </div>
+const TechnicalSkills = () => {
+  return (
+    <div
+      id="techSkills"
+      className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-black"
+    >
+      <div className="container flex flex-col md:flex-row flex-1 items-center justify-between p-6 gap-6">
+        <div className="w-full md:w-1/2 lg:w-2/5">
+          <ProjectGrid />
         </div>
-        <a
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .getElementById("contact")
-              .scrollIntoView({ behavior: "smooth" });
-          }}
-          className="absolute bottom-5 text-sm md:text-2xl underline decoration-2 hover:no-underline cursor-pointer"
-        >
-          Contact Me ↓
-        </a>
+        <div className="w-full md:w-1/2 lg:w-3/5">
+          <SkillTreeComponent />
+        </div>
       </div>
-    );
+      <a
+        href="#contact"
+        onClick={(e) => {
+          e.preventDefault();
+          document
+            .getElementById("contact")
+            .scrollIntoView({ behavior: "smooth" });
+        }}
+        className="absolute bottom-5 text-sm md:text-2xl underline decoration-2 hover:no-underline cursor-pointer text-white"
+      >
+        Contact Me ↓
+      </a>
+    </div>
+  );
 };
 
-export default TechnicalSKills;
+export default TechnicalSkills;
