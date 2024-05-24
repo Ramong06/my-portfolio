@@ -36,8 +36,8 @@ export default function About() {
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center mb-6 md:mb-0">
           <div className="shadow-lg border border-gray-400 rounded-full overflow-hidden">
             <img
-              src="./images/IMG_1196.jpeg"
-              alt="Ramon Garza"
+              src="./images/me.png"
+              alt="Ramon Garza picture"
               className="w-56 h-56 md:w-64 md:h-64 object-cover"
             />
           </div>
