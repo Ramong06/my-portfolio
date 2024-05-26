@@ -38,20 +38,6 @@ export default function Hero() {
       <div className="relative z-10 mt-6 w-full" style={{ height: '600px' }}>
         <Cube />
       </div>
-      {isVisible && (
-        <a
-          href="#about"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .getElementById("about")
-              .scrollIntoView({ behavior: "smooth" });
-          }}
-          className="relative z-10 text-lg md:text-2xl underline decoration-2 hover:no-underline cursor-pointer mt-4 pb-5"
-        >
-          Learn more about me ↓
-        </a>
-      )}
       <div className="relative z-10 w-full mt-4">
         <ScrollingLanguages />
       </div>

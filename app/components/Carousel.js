@@ -64,7 +64,7 @@ export default function Carousel() {
         {projects.map((project, index) => (
           <div key={index} className="carousel-slide min-w-full px-2">
             <div className="relative w-full h-72 md:h-80 rounded-lg overflow-hidden group">
-              <img src={project.image} alt={project.title} className="w-full h-full object-fit" />
+              <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white p-4 transition-opacity duration-300">
                 <h3 className="bg-black bg-opacity-75 text-white py-1 px-2 rounded max-w-xs text-center">{project.title}</h3>
                 <p className="bg-black bg-opacity-75 text-white py-1 px-2 rounded max-w-xs text-center">{project.description}</p>
