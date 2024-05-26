@@ -15,6 +15,12 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleMobileLinkClick = (e, sectionId) => {
+    e.preventDefault();
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false); // Close the mobile menu
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-10 py-6 transition-colors duration-300 ${
@@ -33,7 +39,7 @@ const Navbar = () => {
             }}
           >
             Ramon{" "}
-            <span className="text-lime-500 text-sm md:text-4xl font-handwriting">
+            <span className="text-lime-500 text-xl md:text-4xl font-handwriting">
               G
             </span>
             arza
@@ -89,36 +95,21 @@ const Navbar = () => {
             <a
               href="#home"
               className="text-white py-2 hover:underline"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("home")
-                  .scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={(e) => handleMobileLinkClick(e, 'home')}
             >
               Home
             </a>
             <a
               href="#about"
               className="text-white py-2 hover:underline"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("about")
-                  .scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={(e) => handleMobileLinkClick(e, 'about')}
             >
               About
             </a>
             <a
               href="#techSkills"
               className="text-white py-2 hover:underline"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("techSkills")
-                  .scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={(e) => handleMobileLinkClick(e, 'techSkills')}
             >
               Technical Skills
             </a>
