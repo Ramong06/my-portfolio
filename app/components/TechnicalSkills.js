@@ -33,7 +33,7 @@ const TechnicalSkills = () => {
     <div
       id="techSkills"
       ref={techSkillsRef}
-      className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-lightDarkPurple fade-in"
+      className="relative pt-16 md:pt-24 w-full min-h-screen justify-center flex flex-col md:flex-row bg-darkPurple fade-in"
     >
       <div className="container mt-6 flex flex-col md:flex-row flex-1 items-center justify-between bg-darkPurple p-6 gap-6">
         <div className="w-full md:w-1/2 lg:w-2/5">
